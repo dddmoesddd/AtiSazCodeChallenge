@@ -1,0 +1,12 @@
+version: '3.4'
+
+services:
+  codechallenge:
+    image: ${DOCKER_REGISTRY-}codechallenge
+    build:
+      context: .
+      dockerfile: CodeChallenge/Dockerfile
+    environment:
+      - MONGODB_URL=mongodb://CodeChallengemongo:27017/
+  cashdb:
+        image: redis:alpine
